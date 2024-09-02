@@ -12,6 +12,7 @@ class AuthorizationInterceptor(
     private val calendar: Calendar
 ) : Interceptor {
 
+    @Suppress("MagicNumber")
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
         val requestUrl = request.url
@@ -31,6 +32,7 @@ class AuthorizationInterceptor(
         )
     }
 
+    @Suppress("MagicNumber")
     fun String.md5(): String {
         val md = MessageDigest.getInstance("MD5")
         return BigInteger(
